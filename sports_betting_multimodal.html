@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Sports Betting Hooks College Students — Arya Gaind</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8273A;
+    --red-dark: #B01D2C;
+    --red-light: #FDEAEC;
+    --gold: #F5A623;
+    --gold-dark: #C07800;
+    --green: #1DB954;
+    --green-dark: #158040;
+    --navy: #0D1B2A;
+    --navy-mid: #1A2F45;
+    --navy-light: #243B55;
+    --white: #FFFFFF;
+    --off-white: #F7F5F0;
+    --gray-100: #F0EEE9;
+    --gray-200: #D8D5CC;
+    --gray-500: #888580;
+    --gray-800: #2C2A25;
+    --text: #0D1B2A;
+    --text-muted: #5A6070;
+    --bebas: 'Bebas Neue', sans-serif;
+    --body: 'DM Sans', sans-serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--body);
+    background: var(--off-white);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    border: 120px solid rgba(232,39,58,0.12);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 80px solid rgba(245,166,35,0.08);
+    pointer-events: none;
+  }
+
+  .hero-nav {
+    padding: 1.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    z-index: 2;
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .hero-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 4rem 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+  }
+
+  .hero-title {
+    font-family: var(--bebas);
+    font-size: clamp(64px, 10vw, 130px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title span {
+    color: var(--red);
+    display: block;
+  }
+
+  .hero-question {
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+    max-width: 560px;
+    font-style: italic;
+    line-height: 1.6;
+    border-left: 3px solid var(--gold);
+    padding-left: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-end;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-stat-num {
+    font-family: var(--bebas);
+    font-size: 52px;
+    line-height: 1;
+    color: var(--gold);
+  }
+
+  .hero-stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .hero-footer {
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-author {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    font-family: var(--mono);
+  }
+
+  .hero-scroll {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .scroll-arrow {
+    display: inline-block;
+    animation: bounce 1.8s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+  }
+
+  /* ─── SECTION WRAPPER ─── */
+  .section {
+    padding: 5rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-title {
+    font-family: var(--bebas);
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1;
+    color: var(--navy);
+    margin-bottom: 2rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ─── DIVIDERS ─── */
+  .band {
+    padding: 5rem 4rem;
+  }
+
+  .band-red {
+    background: var(--red);
+    color: var(--white);
+  }
+
+  .band-navy {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .band-gold {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  /* ─── PERSONAL STATEMENT ─── */
+  .statement-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .statement-left {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .statement-text {
+    font-size: 20px;
+    line-height: 1.75;
+    color: var(--gray-800);
+    font-style: italic;
+  }
+
+  .statement-text strong {
+    color: var(--red);
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .author-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gray-200);
+  }
+
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--bebas);
+    font-size: 20px;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .author-info p:first-child {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .author-info p:last-child {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ─── BACKGROUND ─── */
+  .bg-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid var(--gray-200);
+  }
+
+  .bg-card p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--gray-800);
+    margin-bottom: 1rem;
+  }
+
+  .bg-card p:last-child { margin-bottom: 0; }
+
+  /* ─── DID YOU KNOW ─── */
+  .fact-band {
+    background: var(--navy);
+    color: var(--white);
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .fact-icon {
+    font-family: var(--bebas);
+    font-size: 120px;
+    color: var(--red);
+    line-height: 1;
+    flex-shrink: 0;
+    opacity: 0.9;
+  }
+
+  .fact-content {}
+
+  .fact-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .fact-text {
+    font-family: var(--bebas);
+    font-size: clamp(28px, 4vw, 52px);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+
+  .fact-text span { color: var(--gold); }
+
+  /* ─── CASE STUDY ─── */
+  .case-wrapper {
+    background: var(--red);
+    color: var(--white);
+    padding: 4rem;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .case-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 1rem;
+  }
+
+  .case-title {
+    font-family: var(--bebas);
+    font-size: 52px;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .case-body {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .case-stat-block {
+    background: rgba(0,0,0,0.2);
+    border-radius: 12px;
+    padding: 2rem;
+  }
+
+  .case-big-num {
+    font-family: var(--bebas);
+    font-size: 96px;
+    line-height: 1;
+    color: var(--gold);
+  }
+
+  .case-big-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.5rem;
+  }
+
+  .case-detail {
+    margin-top: 1.5rem;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 1rem;
+  }
+
+  /* ─── KEY TERMS ─── */
+  .terms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .term-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid var(--gray-200);
+    border-top: 4px solid var(--red);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .term-card:nth-child(2) { border-top-color: var(--gold); }
+  .term-card:nth-child(3) { border-top-color: var(--navy); }
+
+  .term-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+
+  .term-num {
+    font-family: var(--bebas);
+    font-size: 48px;
+    line-height: 1;
+    color: var(--gray-200);
+    margin-bottom: 0.5rem;
+  }
+
+  .term-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+  }
+
+  .term-def {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  /* ─── STAKEHOLDERS ─── */
+  .stakeholders-band {
+    background: var(--navy);
+    padding: 5rem 4rem;
+  }
+
+  .stakeholders-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .stakeholder-card {
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 2rem;
+    background: rgba(255,255,255,0.04);
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .stakeholder-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.2);
+  }
+
+  .stakeholder-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 1.25rem;
+  }
+
+  .icon-red { background: rgba(232,39,58,0.15); }
+  .icon-gold { background: rgba(245,166,35,0.15); }
+  .icon-blue { background: rgba(56,130,220,0.15); }
+
+  .stakeholder-name {
+    font-family: var(--bebas);
+    font-size: 28px;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+
+  .stakeholder-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ─── FAQs ─── */
+  .faqs {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--gray-200);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .faq-item {
+    background: var(--white);
+  }
+
+  .faq-q {
+    padding: 1.5rem 2rem;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--navy);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: background 0.15s;
+  }
+
+  .faq-q:hover { background: var(--gray-100); }
+
+  .faq-toggle {
+    font-family: var(--bebas);
+    font-size: 24px;
+    color: var(--red);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+  .faq-a {
+    display: none;
+    padding: 0 2rem 1.5rem;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-muted);
+    border-top: 1px solid var(--gray-100);
+  }
+
+  .faq-item.open .faq-a { display: block; }
+
+  /* ─── QUOTES ─── */
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .quote-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2.5rem;
+    border: 1px solid var(--gray-200);
+    position: relative;
+  }
+
+  .quote-mark {
+    font-family: var(--bebas);
+    font-size: 80px;
+    color: var(--red);
+    line-height: 0.7;
+    opacity: 0.2;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+
+  .quote-text {
+    font-size: 17px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--navy);
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .quote-source {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .quote-significance {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--gray-100);
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.65;
+  }
+
+  /* ─── FURTHER THOUGHTS ─── */
+  .further-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .further-body {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--gray-800);
+  }
+
+  .further-body p { margin-bottom: 1.25rem; }
+  .further-body p:last-child { margin-bottom: 0; }
+
+  .further-questions {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 2rem;
+    color: var(--white);
+  }
+
+  .fq-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  .fq-item {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .fq-item:last-child { margin-bottom: 0; }
+
+  .fq-bullet {
+    color: var(--red);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ─── SOURCES ─── */
+  .sources-band {
+    background: var(--gray-100);
+    padding: 4rem;
+  }
+
+  .sources-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .source-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--gray-200);
+    align-items: flex-start;
+  }
+
+  .source-item:last-child { border-bottom: none; }
+
+  .source-num {
+    font-family: var(--bebas);
+    font-size: 32px;
+    color: var(--gray-200);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 36px;
+    margin-top: -3px;
+  }
+
+  .source-cite {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    font-family: var(--mono);
+  }
+
+  .source-cite em { color: var(--navy); font-style: normal; font-weight: 500; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.35);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-family: var(--mono);
+  }
+
+  footer span { color: var(--gold); }
+
+  /* ─── TICKER ─── */
+  .ticker-outer {
+    background: var(--red);
+    overflow: hidden;
+    padding: 10px 0;
+  }
+
+  .ticker-track {
+    display: flex;
+    gap: 3rem;
+    width: max-content;
+    animation: ticker 20s linear infinite;
+  }
+
+  .ticker-item {
+    font-family: var(--bebas);
+    font-size: 18px;
+    color: var(--white);
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    opacity: 0.9;
+  }
+
+  .ticker-dot {
+    color: var(--gold);
+    margin-right: 3rem;
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .hero-nav, .hero-body, .hero-footer { padding: 1.5rem; }
+    .section { padding: 3rem 1.5rem; }
+    .band, .fact-band, .stakeholders-band, .sources-band { padding: 3rem 1.5rem; }
+    .statement-grid, .further-grid, .case-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+    .terms-grid, .stakeholders-grid, .quotes-grid { grid-template-columns: 1fr; }
+    .hero-meta { gap: 1.5rem; flex-wrap: wrap; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── HERO ─── -->
+<header class="hero">
+  <nav class="hero-nav">
+    <div class="nav-logo">English 101 · Multimodal Composition</div>
+    <ul class="nav-links">
+      <li><a href="#background">Background</a></li>
+      <li><a href="#terms">Key Terms</a></li>
+      <li><a href="#faqs">FAQs</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-body">
+    <div class="hero-tag">Research Composition · Arya Gaind</div>
+    <h1 class="hero-title">
+      How Sports
+      <span>Betting Hooks</span>
+      College Students
+    </h1>
+    <p class="hero-question">
+      How do sports betting companies target college students psychologically to keep them engaged — and what are the real costs?
+    </p>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <div class="hero-stat-num">10.23%</div>
+        <div class="hero-stat-label">of college students meet criteria for pathological gambling</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">60%</div>
+        <div class="hero-stat-label">of college-aged people have bet on sports at least once</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">2×</div>
+        <div class="hero-stat-label">the rate of pathological gambling vs. 1999 estimates</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-footer">
+    <div class="hero-author">Arya Gaind · Professor Molin · S26 English 101</div>
+    <div class="hero-scroll">Scroll to explore <span class="scroll-arrow">↓</span></div>
+  </div>
+</header>
+
+<!-- ─── TICKER ─── -->
+<div class="ticker-outer" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">FanDuel <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">DraftKings <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">BetMGM <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">March Madness <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Pathological Gambling <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Near Wins <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">The Five A's <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Impulsive Betting <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">FanDuel <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">DraftKings <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">BetMGM <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">March Madness <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Pathological Gambling <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Near Wins <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">The Five A's <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Impulsive Betting <span class="ticker-dot">◆</span></span>
+  </div>
+</div>
+
+<!-- ─── PERSONAL STATEMENT ─── -->
+<section class="section" id="statement">
+  <div class="statement-grid">
+    <div class="statement-left">
+      <div class="section-label">Personal Statement</div>
+      <div class="section-title">Why This Matters to Me</div>
+    </div>
+    <div>
+      <p class="statement-text">
+        I chose this topic because sports betting is something I see around me <strong>all the time</strong>. A lot of students treat it like a normal hobby — but it can get out of control fast. I've watched people lose money, stress over bets, and hide it from their friends. I wanted to understand <strong>why this is happening</strong> and what makes these apps so addictive for people our age.
+      </p>
+      <div class="author-card">
+        <div class="author-avatar">AG</div>
+        <div class="author-info">
+          <p>Arya Gaind</p>
+          <p>S26 English 101 · Professor Molin</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BACKGROUND ─── -->
+<div style="background: var(--gray-100); padding: 0.5rem 0;"></div>
+<section class="section" id="background">
+  <div class="section-label">Background &amp; Context</div>
+  <div class="section-title">The Landscape</div>
+  <div class="bg-card">
+    <p>Sports betting has exploded on college campuses in the last few years. Apps like FanDuel and DraftKings make it extremely easy to place bets at any time — even during class or late at night. Because everything happens on a phone, it doesn't feel like "real gambling," which makes students more likely to take risks.</p>
+    <p>Many students start betting for fun, but the constant ads, "free bet" offers, and fast payouts keep them coming back. Research shows that impulsive personalities and frequent betting dramatically accelerate the path to addiction. Colleges are struggling to keep up because gambling problems are harder to notice than alcohol or drug issues — students can lose money quietly without anyone realizing what's going on.</p>
+    <p>As sports betting becomes more normalized — and as the legal landscape continues to expand — the risks for young people continue to grow faster than public policy can respond.</p>
+  </div>
+</section>
+
+<!-- ─── DID YOU KNOW ─── -->
+<div class="fact-band">
+  <div class="fact-icon">?</div>
+  <div class="fact-content">
+    <div class="fact-label">Did You Know</div>
+    <p class="fact-text">Nearly <span>60%</span> of college-aged people have bet on sports at least once — and some bet <span>every single day.</span></p>
+  </div>
+</div>
+
+<!-- ─── CASE STUDY ─── -->
+<section class="section" id="case">
+  <div class="section-label">Case Study</div>
+  <div class="section-title">A Story That Repeats Itself</div>
+  <div class="case-wrapper">
+    <div>
+      <div class="case-eyebrow">Real Event · March Madness</div>
+      <h3 class="case-title">The $500 Spiral</h3>
+      <p class="case-body">During last year's March Madness, a college student lost over $500 betting on games. The money came out of an account connected to his family's finances — and he hadn't told anyone. When his parents found out, they cut him off financially. He essentially disappeared from his friend group, too embarrassed to face anyone.</p>
+      <p class="case-body" style="margin-top: 1rem;">His story mirrors thousands of others. It didn't start with an addiction. It started with a single bet.</p>
+    </div>
+    <div class="case-stat-block">
+      <div class="case-big-num">$500+</div>
+      <div class="case-big-label">Lost in a single tournament</div>
+      <div class="case-detail">
+        The student used family funds without disclosure. When discovered, the financial and social consequences were immediate — isolation, loss of trust, and emotional withdrawal. This is not an outlier; it reflects a documented pattern in the research literature.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── KEY TERMS ─── -->
+<div style="background: var(--gray-100); padding: 0.5rem 0;"></div>
+<section class="section" id="terms">
+  <div class="section-label">Key Terms &amp; Concepts</div>
+  <div class="section-title">The Language of the Problem</div>
+  <div class="terms-grid">
+    <div class="term-card">
+      <div class="term-num">01</div>
+      <div class="term-name">Impulsive Betting</div>
+      <p class="term-def">Students who act quickly without thinking are more likely to place risky bets. This makes them more vulnerable to addiction because they chase excitement instead of thinking about consequences — a behavioral tendency that betting apps are specifically engineered to exploit.</p>
+    </div>
+    <div class="term-card">
+      <div class="term-num">02</div>
+      <div class="term-name">Betting Frequency</div>
+      <p class="term-def">The more often someone bets, the easier it is for the habit to turn into a problem. Frequent betting keeps the brain in a constant cycle of winning, losing, and chasing — reinforcing compulsive behavior through neurological reward pathways.</p>
+    </div>
+    <div class="term-card">
+      <div class="term-num">03</div>
+      <div class="term-name">Problem Gambling Severity</div>
+      <p class="term-def">A clinical framework that measures how serious someone's gambling behavior has become. It helps researchers understand how deeply a student is affected and whether their betting has crossed from recreational into genuinely harmful territory requiring intervention.</p>
+    </div>
+    <div class="term-card" style="border-top-color: var(--green);">
+      <div class="term-num">04</div>
+      <div class="term-name">Near Wins</div>
+      <p class="term-def">When a bet almost pays off, the brain reacts almost identically to an actual win. This exploits neurological vulnerability by making losses feel like progress — a powerful mechanism that keeps users engaged even when they are objectively losing money.</p>
+    </div>
+    <div class="term-card" style="border-top-color: #7B4FDC;">
+      <div class="term-num">05</div>
+      <div class="term-name">The Five A's</div>
+      <p class="term-def">A research framework identifying why college students are especially susceptible: Availability, Acceptability, Advertising, Access to money, and Age. These five converging factors create a uniquely high-risk environment that betting companies actively leverage.</p>
+    </div>
+    <div class="term-card" style="border-top-color: #1A8C6F;">
+      <div class="term-num">06</div>
+      <div class="term-name">Pathological Gambling</div>
+      <p class="term-def">A diagnosable psychiatric condition in which gambling behavior is uncontrollable, compulsive, and destructive — causing serious harm across personal, financial, and social domains. Distinct from "problem gambling" in severity; approximately 10.23% of college students qualify.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STAKEHOLDERS ─── -->
+<div class="stakeholders-band" id="stakeholders">
+  <div style="max-width: 1200px; margin: 0 auto; margin-bottom: 3rem;">
+    <div class="section-label" style="color: var(--gold);">Stakeholders</div>
+    <div class="section-title" style="color: var(--white);">Who Bears the Cost</div>
+  </div>
+  <div class="stakeholders-grid">
+    <div class="stakeholder-card">
+      <div class="stakeholder-icon icon-red">🎓</div>
+      <div class="stakeholder-name">College Students</div>
+      <p class="stakeholder-desc">The primary victims. Constantly exposed to targeted betting ads and peer pressure, many don't recognize how rapidly small bets compound into serious financial and psychological harm. Their developmental stage — characterized by elevated risk-taking — makes them uniquely vulnerable.</p>
+    </div>
+    <div class="stakeholder-card">
+      <div class="stakeholder-icon icon-gold">🏛️</div>
+      <div class="stakeholder-name">Universities</div>
+      <p class="stakeholder-desc">Institutions are caught managing the downstream consequences: financial distress, mental health crises, and academic deterioration. They face a structural challenge — gambling addiction is largely invisible, unlike substance abuse, making identification and intervention far more difficult.</p>
+    </div>
+    <div class="stakeholder-card">
+      <div class="stakeholder-icon icon-blue">👨‍👩‍👦</div>
+      <div class="stakeholder-name">Families</div>
+      <p class="stakeholder-desc">Parents absorb the financial fallout, often discovering losses only after accounts have been drained. The secrecy inherent to gambling addiction creates ruptures in family trust that can take years to repair — and the psychological toll extends far beyond the monetary.</p>
+    </div>
+    <div class="stakeholder-card">
+      <div class="stakeholder-icon icon-red">⚖️</div>
+      <div class="stakeholder-name">Legislatures</div>
+      <p class="stakeholder-desc">Lawmakers hold regulatory authority over age restrictions, advertising limits, and consumer protections. Currently, legislation has not kept pace with the speed of mobile betting's expansion — creating a policy vacuum that companies have moved quickly to fill.</p>
+    </div>
+    <div class="stakeholder-card">
+      <div class="stakeholder-icon icon-gold">💸</div>
+      <div class="stakeholder-name">Betting Companies</div>
+      <p class="stakeholder-desc">FanDuel, DraftKings, BetMGM and others profit directly from compulsive behavior. Their products are engineered with notifications, "free bet" hooks, and rapid payout cycles specifically designed to maximize engagement — and their marketing disproportionately targets young male demographics.</p>
+    </div>
+    <div class="stakeholder-card">
+      <div class="stakeholder-icon icon-blue">🌐</div>
+      <div class="stakeholder-name">General Public</div>
+      <p class="stakeholder-desc">Gambling addiction carries economic and social externalities that extend well beyond individual students — affecting healthcare systems, community mental health, and workplace productivity. The normalization of sports betting reshapes cultural attitudes toward risk and money across entire generations.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── QUOTES ─── -->
+<section class="section" id="quotes">
+  <div class="section-label">From the Research</div>
+  <div class="section-title">Voices &amp; Evidence</div>
+  <div class="quotes-grid">
+    <div class="quote-card">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">Near wins also exploit this vulnerability by activating our brain's reward system almost as strongly as a win, making losses feel like progress and encouraging us to keep betting.</p>
+      <div class="quote-source">Thompson, Eli · Wall Street Journal · March 2026</div>
+      <p class="quote-significance">This explains why students cannot simply "walk away" after losing. There is something biologically happening in the brain that makes losing feel like proximity to winning — a mechanism deliberately embedded in app design.</p>
+    </div>
+    <div class="quote-card">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">It almost feels like binge drinking or methamphetamines, where they are going on benders.</p>
+      <div class="quote-source">Counselor quoted in Staley · TIME Magazine · Dec. 2023</div>
+      <p class="quote-significance">This comparison — from a professional who works with addicted students — illustrates the intensity of gambling episodes. The behavior is not casual or recreational; at its worst, it mirrors the compulsive patterns of substance addiction.</p>
+    </div>
+    <div class="quote-card">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">College students are on a trajectory to report increased rates of disordered gambling as gambling opportunities are predicted to increase.</p>
+      <div class="quote-source">Nowak &amp; Aloe · Journal of Gambling Studies · 2014, p. 826</div>
+      <p class="quote-significance">Written over a decade ago, this warning has proven prophetic. The expansion of mobile betting since 2014 has accelerated exactly the trajectory the authors predicted — making intervention more urgent than ever.</p>
+    </div>
+    <div class="quote-card">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">Gambling disorders are highly comorbid with other psychiatric disorders, particularly those related to substance use.</p>
+      <div class="quote-source">Nowak &amp; Aloe · Journal of Gambling Studies · 2014, p. 824</div>
+      <p class="quote-significance">Gambling addiction rarely exists in isolation. It frequently accompanies depression, anxiety, and substance abuse — meaning treating only the gambling behavior without addressing its comorbidities is clinically insufficient and likely ineffective.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQs ─── -->
+<div style="background: var(--gray-100); padding: 0.5rem 0;"></div>
+<section class="section" id="faqs">
+  <div class="section-label">Frequently Asked Questions</div>
+  <div class="section-title">What People Want to Know</div>
+  <div class="faqs">
+    <div class="faq-item open">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Why do college students get addicted so easily?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a">
+        College students are at a developmental stage characterized by elevated risk-taking and lower impulse control. Sports betting apps compound this by making gambling feel casual and harmless — wrapped in the aesthetics of a game rather than a casino. Apps are engineered with notifications, bonuses, and rapid results to sustain engagement. Students also navigate chronic stressors — academic pressure, social anxiety, financial insecurity — that make the immediate emotional reward of betting acutely appealing.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Is sports betting really that different from regular gambling?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a">
+        Yes — and the difference is architectural. Traditional gambling required physical presence; mobile sports betting is accessible 24 hours a day from any location. A student can place dozens of bets in minutes without speaking to anyone or leaving their dorm. The frictionlessness of the experience is not accidental — it is a deliberate design choice that removes every natural barrier that once slowed compulsive behavior. Speed and convenience are, in this context, risk amplifiers.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Can students get help for gambling addiction?
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a">
+        Help exists — but access and awareness are significant barriers. Many students don't recognize they have a problem until they are in serious financial or psychological distress. Colleges are beginning to incorporate gambling questions into wellness screenings, and some institutions offer dedicated counseling. National resources like Gamblers Anonymous are available. The structural challenge is that gambling addiction is largely invisible — unlike substance abuse, it leaves no physical markers and is easy to conceal from peers, advisors, and family.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FURTHER THOUGHTS ─── -->
+<section class="section" id="further">
+  <div class="section-label">Further Thoughts</div>
+  <div class="section-title">Where Do We Go From Here?</div>
+  <div class="further-grid">
+    <div class="further-body">
+      <p>Sports betting is growing so fast that colleges, families, and public health systems are struggling to keep pace. The central policy tension is this: how do institutions protect students without overreach — and how do we hold companies accountable without simply displacing demand to less regulated markets?</p>
+      <p>One of the most urgent open questions is whether states should impose meaningful restrictions on how betting companies advertise to young adults. The current regulatory environment permits saturation-level marketing on platforms where college students spend the majority of their time, with minimal guardrails on targeting criteria.</p>
+      <p>High schools should begin teaching gambling literacy alongside financial literacy and substance awareness — because by the time most students arrive at college, the apps are already installed and the habits are already forming. Education that reaches students before exposure is categorically more effective than intervention after the fact.</p>
+      <p>Sports betting is not going away. The more consequential question is whether the institutions responsible for young people's development are willing to treat gambling harm with the same seriousness they have (slowly, imperfectly) extended to alcohol, drugs, and mental health.</p>
+    </div>
+    <div>
+      <div class="further-questions">
+        <div class="fq-label">Open Questions</div>
+        <div class="fq-item">
+          <span class="fq-bullet">→</span>
+          How has the rise of mobile betting since 2013 affected pathological gambling rates compared to earlier estimates?
+        </div>
+        <div class="fq-item">
+          <span class="fq-bullet">→</span>
+          What campus intervention programs have been proven effective, and how widely are they being implemented?
+        </div>
+        <div class="fq-item">
+          <span class="fq-bullet">→</span>
+          Should states limit sports betting ads that specifically target young people online?
+        </div>
+        <div class="fq-item">
+          <span class="fq-bullet">→</span>
+          How should colleges screen for gambling addiction when most signs are hidden from view?
+        </div>
+        <div class="fq-item">
+          <span class="fq-bullet">→</span>
+          What would actually work to stop underage users from accessing betting apps — and why hasn't it happened yet?
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOURCES ─── -->
+<div class="sources-band" id="sources">
+  <div class="sources-inner">
+    <div class="section-label">Works Cited</div>
+    <div class="section-title" style="margin-bottom: 2.5rem;">Sources</div>
+
+    <div class="source-item">
+      <div class="source-num">01</div>
+      <div class="source-cite">Shen, Yawen. "Determinants of Problem Sports Betting Among College Students: Moderating Roles of Betting Frequency and Impulsive Betting Tendency." <em>BMC Psychology</em>, vol. 11, 2023, pp. 1–12.</div>
+    </div>
+    <div class="source-item">
+      <div class="source-num">02</div>
+      <div class="source-cite">Nowak, Donald E., and Ariel M. Aloe. "The Prevalence of Pathological Gambling Among College Students: A Meta-analytic Synthesis, 2005–2013." <em>Journal of Gambling Studies</em>, vol. 30, no. 3, 2014, pp. 819–843.</div>
+    </div>
+    <div class="source-item">
+      <div class="source-num">03</div>
+      <div class="source-cite">Staley, Oliver. "Gambling Addiction Is Spreading in Colleges." <em>TIME</em>, 12 Dec. 2023, time.com/6342504/gambling-addiction-sports-betting-college-students/.</div>
+    </div>
+    <div class="source-item">
+      <div class="source-num">04</div>
+      <div class="source-cite">Thompson, Eli. "I'm a College Student. Gen Z Sports Betting Is Wrecking My Friends' Lives." <em>The Wall Street Journal</em>, 9 Mar. 2026, www.wsj.com.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div>Arya Gaind · English 101 · Professor Molin · <span>S26</span></div>
+  <div>Multimodal Composition — How Sports Betting Hooks College Students</div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+  var item = el.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
