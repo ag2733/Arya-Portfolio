@@ -7,110 +7,161 @@
   <meta name="description" content="Portfolio of Arya Gaind, an accounting major at Rutgers Business School.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --paper: #eef3ea;
-      --rule: #cfdccb;
-      --ink: #1b2a3a;
-      --muted: #4d5f6e;
-      --margin: #b8412f;
-      --chip: #dfe9da;
-      --link: #17507a;
+      --navy: #0b2545;
+      --navy-deep: #081a33;
+      --blue: #1f5fa8;
+      --sky: #e7f0fa;
+      --sky-mid: #bcd4ee;
+      --line: #d6e3f3;
+      --text: #14233a;
+      --muted: #51627a;
+      --white: #ffffff;
     }
 
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
 
     body {
       margin: 0;
-      color: var(--ink);
-      font-family: "Source Serif 4", Georgia, serif;
-      font-size: 1.125rem;
-      line-height: 1.7;
-      background-color: var(--paper);
-      /* faint ledger lines */
-      background-image: repeating-linear-gradient(
-        to bottom,
-        transparent 0,
-        transparent 33px,
-        var(--rule) 33px,
-        var(--rule) 34px
-      );
+      font-family: "Figtree", "Helvetica Neue", Arial, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--white);
     }
 
-    /* the red ledger margin line */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: clamp(1rem, 7vw, 6rem);
-      width: 2px;
-      background: var(--margin);
-      opacity: 0.55;
-      pointer-events: none;
-    }
-
-    .wrap {
-      max-width: 46rem;
+    .container {
+      max-width: 62rem;
       margin: 0 auto;
-      padding: 0 1.25rem 4rem clamp(2.25rem, 12vw, 9rem);
+      padding: 0 1.5rem;
     }
 
     h1, h2, h3 {
-      font-family: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+      font-family: "DM Serif Display", Georgia, serif;
+      font-weight: 400;
       line-height: 1.15;
       margin: 0;
     }
 
-    header { padding: 5rem 0 2rem; }
-
-    h1 {
-      font-size: clamp(2.75rem, 9vw, 4.75rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .role {
-      margin: 0.5rem 0 0;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    nav { margin-top: 1.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
-
-    a { color: var(--link); text-underline-offset: 3px; }
-    a:hover { color: var(--margin); }
-    a:focus-visible {
-      outline: 3px solid var(--margin);
+    a { color: var(--blue); text-underline-offset: 3px; }
+    a:hover { color: var(--navy); }
+    a:focus-visible, .btn:focus-visible {
+      outline: 3px solid var(--blue);
       outline-offset: 3px;
-      border-radius: 2px;
     }
 
-    section { padding: 2.5rem 0 0.5rem; }
+    /* top bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+    }
 
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
+    .topbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .brand {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: 1.3rem;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .topbar nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+    .topbar nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.98rem;
+    }
+
+    .topbar nav a:hover { color: var(--blue); }
+
+    /* hero */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 5rem 0 5.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 4.6rem);
+      margin-bottom: 1.25rem;
     }
 
     .statement {
-      font-size: 1.45rem;
+      max-width: 38rem;
+      margin: 0 0 2rem;
+      font-size: 1.3rem;
       line-height: 1.5;
-      margin: 0;
+      color: #dbe7f6;
     }
 
-    .skill-group { margin-bottom: 1.5rem; }
+    .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
-    .skill-group h3 {
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid var(--white);
     }
+
+    .btn-light { background: var(--white); color: var(--navy); }
+    .btn-light:hover { background: var(--sky); color: var(--navy); }
+    .btn-outline { background: transparent; color: var(--white); }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.12); color: var(--white); }
+    .hero .btn:focus-visible, .contact .btn:focus-visible { outline-color: var(--sky-mid); }
+
+    /* sections */
+    section { padding: 4.5rem 0; }
+    section.alt { background: var(--sky); }
+
+    h2 {
+      font-size: 2.1rem;
+      color: var(--navy);
+      margin-bottom: 1.75rem;
+    }
+
+    /* about */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .about-grid p { margin: 0 0 1rem; max-width: 36rem; }
+
+    .facts { margin: 0; padding-left: 1.25rem; border-left: 3px solid var(--blue); }
+    .facts dt { font-weight: 600; color: var(--navy); }
+    .facts dd { margin: 0 0 1rem; color: var(--muted); }
+    .facts dd:last-child { margin-bottom: 0; }
+
+    /* skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      gap: 2rem 2.5rem;
+    }
+
+    .skills-grid h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: 0.75rem; }
 
     ul.chips {
       list-style: none;
@@ -122,35 +173,62 @@
     }
 
     ul.chips li {
-      background: var(--chip);
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-      padding: 0.15rem 0.75rem;
-      font-size: 1rem;
-      line-height: 1.6;
+      background: var(--white);
+      border: 1px solid var(--sky-mid);
+      border-radius: 999px;
+      padding: 0.2rem 0.9rem;
+      font-size: 0.95rem;
     }
 
+    /* projects */
     .project {
-      padding: 1.25rem 0 1.5rem;
-      border-top: 2px solid var(--ink);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem 3rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--line);
     }
 
-    .project:first-of-type { margin-top: 0.5rem; }
+    .project:last-child { border-bottom: 1px solid var(--line); }
 
-    .project h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .project h3 { font-size: 1.45rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .project .tools { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .project p { margin: 0 0 0.9rem; max-width: 38rem; }
+    .project a { font-weight: 600; }
 
-    .project p { margin: 0 0 0.75rem; max-width: 40rem; }
+    /* interests */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap: 2rem 3rem;
+    }
 
-    .tools { color: var(--muted); font-size: 0.95rem; }
+    .interests-grid h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: 0.75rem; }
 
-    .links { display: flex; gap: 1.25rem; flex-wrap: wrap; font-size: 1rem; }
+    .interests-grid ul { margin: 0; padding: 0; list-style: none; }
+
+    .interests-grid li {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--sky-mid);
+    }
+
+    /* contact */
+    .contact { background: var(--navy); color: var(--white); }
+    .contact h2 { color: var(--white); }
+    .contact p { max-width: 36rem; margin: 0 0 1.75rem; color: #dbe7f6; }
 
     footer {
-      margin-top: 3rem;
-      padding-top: 1.25rem;
-      border-top: 2px solid var(--ink);
-      color: var(--muted);
-      font-size: 1rem;
+      background: var(--navy-deep);
+      color: #9fb3cf;
+      padding: 1.25rem 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      .hero { padding: 3.5rem 0 4rem; }
+      section { padding: 3.25rem 0; }
+      .about-grid, .project { grid-template-columns: 1fr; gap: 1.5rem; }
+      .project { gap: 0.75rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -159,129 +237,216 @@
   </style>
 </head>
 <body>
-  <div class="wrap">
 
-    <header>
-      <h1>Arya Gaind</h1>
-      <p class="role">Accounting major, Rutgers Business School</p>
-      <nav aria-label="Page sections">
-        <a href="#about">Personal statement</a>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="#top">Arya Gaind</a>
+      <nav aria-label="Main">
+        <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main>
+  <main id="top">
 
-      <!-- SECTION 1: PERSONAL STATEMENT -->
-      <section id="about">
-        <h2>Personal statement</h2>
+    <!-- HERO + PERSONAL STATEMENT -->
+    <div class="hero">
+      <div class="container">
+        <h1>Arya Gaind</h1>
         <p class="statement">
           I'm a second-year accounting major at Rutgers Business School who combines strong Excel skills and attention to detail with real customer-facing experience, and I'm looking for a 2027 internship in accounting or sports finance.
         </p>
-      </section>
+        <div class="actions">
+          <a class="btn btn-light" href="#projects">See my projects</a>
+          <a class="btn btn-outline" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </div>
 
-      <!-- SECTION 2: SKILLS -->
-      <section id="skills">
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <h2>About me</h2>
+        <div class="about-grid">
+          <div>
+            <p>
+              I'm studying accounting at Rutgers Business School in New Brunswick. I like work where accuracy matters and there's a clear right answer to track down, which is a big reason accounting clicked for me.
+            </p>
+            <p>
+              Outside of class I work as a digital personal shopper at Walmart, where I pick and pack well over 100 grocery orders a day and keep up a pace above the company benchmark. I also referee intramural games at Rutgers, so I'm used to making quick, fair decisions with people watching.
+            </p>
+            <p>
+              I'm a member of the Rutgers Accounting Association and the Personal Finance Club, where I've picked up skills in Excel, auditing, and tax prep through workshops.
+            </p>
+          </div>
+          <dl class="facts">
+            <dt>Education</dt>
+            <dd>B.S. in Accounting, Rutgers Business School</dd>
+            <dt>Expected graduation</dt>
+            <dd>May 2029</dd>
+            <dt>Currently</dt>
+            <dd>Digital Personal Shopper at Walmart and intramural referee at Rutgers</dd>
+            <dt>Looking for</dt>
+            <dd>2027 internship in accounting or sports finance</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="alt">
+      <div class="container">
         <h2>Skills</h2>
+        <div class="skills-grid">
 
-        <div class="skill-group">
-          <h3>Accounting</h3>
-          <ul class="chips">
-            <li>Adjusting entries</li>
-            <li>Inventory methods</li>
-            <li>Bond amortization</li>
-            <li>Cash flow statements</li>
-            <li>Financial ratio analysis</li>
-            <li>Stockholders' equity</li>
-          </ul>
+          <div>
+            <h3>Accounting</h3>
+            <ul class="chips">
+              <li>Adjusting entries</li>
+              <li>Inventory methods</li>
+              <li>Bond amortization</li>
+              <li>Cash flow statements</li>
+              <li>Financial ratio analysis</li>
+              <li>Stockholders' equity</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Technical</h3>
+            <ul class="chips">
+              <li>Microsoft Excel</li>
+              <li>PowerPoint</li>
+              <li>Data entry</li>
+              <li>COUNTIF and data analysis</li>
+              <li>Charts and visuals</li>
+              <li>HTML and JavaScript basics</li>
+              <li>Adobe Express</li>
+              <li>GitHub</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Professional</h3>
+            <ul class="chips">
+              <li>Customer service</li>
+              <li>Working under time pressure</li>
+              <li>Accuracy and order fulfillment</li>
+              <li>Teamwork</li>
+              <li>Written communication</li>
+              <li>Decision-making under pressure</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Languages</h3>
+            <ul class="chips">
+              <li>English</li>
+              <li>Spanish (conversational)</li>
+              <li>Hindi (conversational)</li>
+              <li>Punjabi (intermediate)</li>
+            </ul>
+          </div>
+
         </div>
+      </div>
+    </section>
 
-        <div class="skill-group">
-          <h3>Technical</h3>
-          <ul class="chips">
-            <li>Microsoft Excel</li>
-            <li>PowerPoint</li>
-            <li>Data entry</li>
-            <li>COUNTIF and data analysis</li>
-            <li>Charts and visuals</li>
-            <li>HTML and JavaScript basics</li>
-            <li>Adobe Express</li>
-            <li>GitHub</li>
-          </ul>
-        </div>
-
-        <div class="skill-group">
-          <h3>Professional</h3>
-          <ul class="chips">
-            <li>Customer service</li>
-            <li>Working under time pressure</li>
-            <li>Accuracy and order fulfillment</li>
-            <li>Teamwork</li>
-            <li>Written communication</li>
-            <li>Decision-making under pressure</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>Languages</h3>
-          <ul class="chips">
-            <li>English</li>
-            <li>Spanish (conversational)</li>
-            <li>Hindi (conversational)</li>
-            <li>Punjabi (intermediate)</li>
-          </ul>
-        </div>
-
-      </section>
-
-      <!-- SECTION 3: PROJECTS -->
-      <section id="projects">
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
         <h2>Projects</h2>
 
         <article class="project">
-          <h3>Hankook Tire Dataset Analysis</h3>
-          <p>
-            Built an Excel analysis of a Hankook tire dataset for a statistics course. I used COUNTIF formulas to summarize the data and made a bar chart to show the results clearly.
-          </p>
-          <p class="tools">Tools: Excel, COUNTIF, bar charts</p>
-          <div class="links">
-            <!-- TODO: replace with your real link, or delete this line if you don't have one -->
-            <a href="https://github.com/YOUR-USERNAME/YOUR-REPO/tree/main/hankook-analysis">View files on GitHub</a>
+          <div>
+            <h3>Hankook Tire Dataset Analysis</h3>
+            <p class="tools">Excel, COUNTIF, bar charts</p>
+          </div>
+          <div>
+            <p>
+              Built an Excel analysis of a Hankook tire dataset for a statistics course. I used COUNTIF formulas to summarize the data and made a bar chart to show the results clearly.
+            </p>
+            <a href="https://rutgersconnect-my.sharepoint.com/:x:/g/personal/ag2733_scarletmail_rutgers_edu/IQBi85u6jPsjRadDSFPkcGaIAcAIif8wc-YJH0aYt1Jtpus?e=tOP17s&amp;nav=MTVfezJBQTZEQzFFLTJBQTMtODY0NC05RTQ0LUZEQkUxMzlDMzZEQ30">View the Excel file</a>
           </div>
         </article>
 
         <article class="project">
-          <h3>Sports Betting Among College Students</h3>
-          <p>
-            A multimodal research project for English 101 that looks at how sports betting is showing up in college life. I researched the topic and designed the final piece in Adobe Express.
-          </p>
-          <p class="tools">Tools: Adobe Express, academic research</p>
-          <div class="links">
-            <!-- TODO: replace with the link to your finished project -->
-            <a href="https://YOUR-PROJECT-LINK-HERE">View the project</a>
+          <div>
+            <h3>Sports Betting Among College Students</h3>
+            <p class="tools">Adobe Express, academic research</p>
+          </div>
+          <div>
+            <p>
+              A multimodal research project for English 101 that looks at how sports betting is showing up in college life. I researched the topic and designed the final piece in Adobe Express.
+            </p>
+            <!-- This file must be uploaded to the same GitHub repo as index.html -->
+            <a href="sports_betting_multimodal.html">View the project</a>
           </div>
         </article>
 
         <article class="project">
-          <h3>This Portfolio Website</h3>
-          <p>
-            A personal site built with HTML and CSS and published with GitHub Pages. It gives employers a quick look at who I am, what I can do, and what I've worked on.
-          </p>
-          <p class="tools">Tools: HTML, CSS, GitHub Pages</p>
-          <div class="links">
-            <!-- TODO: replace with your repo link -->
-            <a href="https://github.com/YOUR-USERNAME/YOUR-REPO">View the code</a>
+          <div>
+            <h3>This Portfolio Website</h3>
+            <p class="tools">HTML, CSS, GitHub Pages</p>
+          </div>
+          <div>
+            <p>
+              A personal site built with HTML and CSS and published with GitHub Pages. It gives employers a quick look at who I am, what I can do, and what I've worked on.
+            </p>
+            <a href="https://github.com/ag2733/Arya-Portfolio">View the code</a>
           </div>
         </article>
-      </section>
+      </div>
+    </section>
 
-    </main>
+    <!-- INTERESTS -->
+    <section id="interests" class="alt">
+      <div class="container">
+        <h2>My interests</h2>
+        <div class="interests-grid">
+          <div>
+            <h3>Activities</h3>
+            <ul>
+              <li>Intramural soccer</li>
+              <li>Recreational tennis</li>
+              <li>RU Badminton</li>
+              <li>RU Valuating</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Outside of school and work</h3>
+            <ul>
+              <li>Content creation</li>
+              <li>Fantasy football</li>
+              <li>Basketball (Celtics fan)</li>
+              <li>Traveling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-      <!-- TODO: add your real email or LinkedIn -->
-      Get in touch: <a href="mailto:aryagaind@gmail.com">aryagaind@gmail.com</a>
-    </footer>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          If you're hiring for a 2027 accounting or sports finance internship, or just want to connect, email is the best way to reach me.
+        </p>
+        <a class="btn btn-light" href="mailto:aryagaind@gmail.com">aryagaind@gmail.com</a>
+      </div>
+    </section>
 
-  </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Arya Gaind
+    </div>
+  </footer>
+
 </body>
 </html>
